@@ -1,0 +1,139 @@
+Question 1 — Linux Navigation & File Management
+
+To complete the tasks on the remote Linux server:
+
+See files and folders:
+
+Run: pwd → prints the current working directory so I know where I am.
+
+Run: ls → lists all files and folders in the current directory.
+
+This helps confirm I am in the right location.
+
+Move into config folder:
+
+Run: cd config → changes the current directory to config.
+
+Risk: If the folder doesn’t exist, the command fails. I can check with ls first.
+
+Read the contents of settings.conf:
+
+Run: cat settings.conf → displays the file content in the terminal.
+
+Alternative commands: less settings.conf or more settings.conf.
+
+I choose cat because I just want to read, not edit the file.
+
+Create a new folder backup:
+
+Run: mkdir backup → creates a new directory called backup.
+
+Risk: If a folder with the same name exists, it will fail. I can check with ls first.
+
+Copy settings.conf to backup:
+
+Run: cp settings.conf backup/ → copies the file into the backup folder.
+
+Risk: If a file with the same name exists, it will be overwritten. I can use cp -i for interactive confirmation.
+
+Delete server.log:
+
+Run: rm server.log → deletes the file permanently.
+
+Risk: Deleted files cannot be recovered easily, so I double-check with ls before running it.
+
+Question 2 — Loops
+
+Loops are a way to repeat a task multiple times in code. In Python, there are mainly two types:
+
+for loops:
+
+Used when you know exactly how many times you want the loop to run.
+
+Example: printing numbers from 1 to 100:
+
+for i in range(1, 101):
+    print(i)
+
+while loops:
+
+Used when you want the loop to continue until a condition is met.
+
+Example: asking a user to enter the correct password:
+
+password = ""
+while password != "secret123":
+    password = input("Enter password: ")
+
+Key advice:
+
+Use for loops for fixed repetitions and while loops for condition-based repetition.
+
+Be careful with while loops — if the condition is never met, the loop can run forever. You can stop it with Ctrl + C.
+
+Question 3 — Immutable Data Types
+
+In Python, data types are either mutable or immutable:
+
+Mutable: can be changed after creation.
+
+Examples: lists, dictionaries, sets.
+
+You can add, remove, or modify elements.
+
+Immutable: cannot be changed after creation.
+
+Examples: strings, tuples, numbers.
+
+If you try to change them, Python creates a new object instead.
+
+Practical example: removing vowels from a string:
+
+text = "hello"
+new_text = ""
+
+for char in text:
+    if char not in "aeiou":
+        new_text += char
+
+print(new_text)  # Output: "hll"
+
+The original string text doesn’t change because strings are immutable.
+
+You create a new string new_text with the modifications.
+
+Why it matters:
+
+Helps avoid unintended changes to data.
+
+Prevents bugs when multiple parts of a program reference the same object.
+
+Question 4 — APIs and HTTP
+
+An API (Application Programming Interface) is like a messenger between two applications:
+
+Imagine a restaurant: the menu is the API. You (the client) place an order (request) via the menu, and the kitchen (server) sends back your food (response).
+
+The API allows software to communicate without sharing internal details.
+
+HTTP requests: ways a client asks the server to do something:
+
+GET: ask for information (e.g., fetch user data).
+
+POST: send new information to be stored (e.g., create a new account).
+
+PUT / PATCH: update existing information.
+
+DELETE: remove information.
+
+Endpoint:
+
+A specific URL where the API can access a resource.
+
+Example: https://api.example.com/users/123 → endpoint for user 123.
+
+In short:
+
+The mobile app uses APIs to talk to the server.
+
+Requests go over HTTP, the server processes them, and sends back responses.
