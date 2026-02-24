@@ -77,6 +77,41 @@ def uuid_validator(list_of_uuids):
 
 
 print(uuid_validator(["550e8400-e29b-41d4-a716-446655440000", "abc-123-gh-789"]))
+def uuid_validator(list_of_uuids):
+    result = {
+        "valid_uuids": [],
+        "invalid_uuids": []
+    }
+
+    hex_chars = "0123456789abcdefABCDEF"
+
+    for uuid in list_of_uuids:
+
+        if len(uuid) == 36:
+            parts = uuid.split("-")
+
+            if len(parts) == 5 and \
+               len(parts[0]) == 8 and \
+               len(parts[1]) == 4 and \
+               len(parts[2]) == 4 and \
+               len(parts[3]) == 4 and \
+               len(parts[4]) == 12:
+
+                is_hex = True
+                for char in uuid.replace("-", ""):
+                    if char not in hex_chars:
+                        is_hex = False
+                        break
+
+                if is_hex:
+                    result["valid_uuids"].append(uuid)
+                    continue
+
+        result["invalid_uuids"].append(uuid)
+
+    return result
+
+print(uuid_validator(["550e8400-e29b-41d4-a716-446655440000", "abc-123-gh-789"]))
 
 def inventory_depletion(inventory, daily_sales_projections):
 
