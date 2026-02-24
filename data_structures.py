@@ -22,7 +22,15 @@ def create_id_lookup(user_data: list) -> dict:
         my_dict.update({data:count})
         count += 1
     return my_dict 
-    # return {}
+
+def create_id_lookup(user_data: list) -> dict:
+    my_dict = {}
+    count = 0
+    for data in user_data:
+        my_dict[data] = count
+        count += 1
+    return my_dict
+
 # print(create_id_lookup(["Sipho", "Lerato", "Thandi", "Kobane"]))
 # ============================
 # TODO:Question 3
