@@ -76,6 +76,20 @@ def batch_api_dispatcher(user_ids: Union[list, tuple]) -> list:
 
 # print(batch_api_dispatcher(['ID1', 'ID2', 'ID3', 'ID4', 'ID5', 'ID6', 'ID7']))
 
+from typing import Union
+def batch_api_dispatcher(user_ids: Union[list, tuple]) -> list:
+    batch_size = 5
+    batches = []
+    batches_list = []
+    for id in user_ids:
+        batches.append(id)
+        if len(batches) == 5:
+            batches_list.append(batches)
+            batches = []
+    if batches:
+        batches_list.append(batches)
+    return batches_list
+
 # ============================
 # TODO:Question 6
 # ============================
