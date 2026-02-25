@@ -1,0 +1,51 @@
+=== Question 1 ===
+#Answer below
+Mutable data structures are data structures that can be changed after they are created. 
+This means you can add, remove, or modify their contents without creating a new object. 
+Examples of mutable data structures are lists and dictionaries.
+
+Immutable data structures cannot be changed after they are created. 
+If you try to modify them, Python creates a new object instead of changing the original one. 
+Examples of immutable data structures are strings, tuples, and integers.
+
+Immutability is beneficial when you want to store data that should not change, such as an ID number. 
+For example, if a student ID is stored as a string or integer (which are immutable), it cannot 
+accidentally be modified elsewhere in the program. This helps prevent bugs and protects important data.
+=== Question 2 ===
+#Answer below
+A list is used when you want to store ordered and mutable data. Lists allow duplicate values, 
+and you can access items by their position (index). Lists are best suited for situations 
+where order matters and you may need to update, add, or remove items. 
+Example: storing test scores or a sequence of tasks.
+
+A set is used when you want to store unique items only. Sets do not allow duplicates 
+and do not maintain order. Sets are useful when you need to remove duplicate values 
+or check membership quickly. For example, storing unique email addresses 
+so that no address appears twice.
+
+A dictionary is used to store data in key-value pairs. Each key must be unique, 
+and it maps to a specific value. Dictionaries are best suited when you need 
+to quickly look up information using a key. For example, storing student information 
+where the student ID is the key and the student’s details are the value.
+=== Question 3 ===
+#Answer below
+In a live class-list application, the data structure must be mutable because 
+students will be added, removed, and updated many times a day. It must also allow 
+efficient searching and updating of student information.
+
+A dictionary would be the most appropriate data structure for managing students. 
+Each student could be stored using a unique student ID as the key, and their 
+details (such as name, email, and course information) as the value. 
+
+Dictionaries are suitable because:
+- They allow fast lookup using a key.
+- They allow updates without recreating the whole structure.
+- Keys must be unique, which prevents duplicate student records.
+
+A list alone would not be ideal because searching for a specific student 
+would require looping through the entire list. However, a list of dictionaries 
+could still work, but it would not be as efficient as using a dictionary 
+with student IDs as keys.
+
+Therefore, a dictionary is better suited for handling constantly changing data 
+in a live system.
